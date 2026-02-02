@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        docker {
+            image 'alpine:latest'
+            args '-u root'
+        }
+    }
+
+    stages {
+        stage('Hello World') {
+            steps {
+                sh 'echo "Hello, World from Docker agent!"'
+            }
+        }
+    }
+}
